@@ -17,7 +17,7 @@ public class DroneMovement : MonoBehaviour {
     public Vector3 RightForce;
 
     public int upForce = 700;
-    public int force = 10;
+    public int force = 100;
     public int distance = 2;
 
     void Start()
@@ -44,18 +44,18 @@ public class DroneMovement : MonoBehaviour {
         if (Input.GetKey("w"))
         {
             //rb.AddForceAtPosition(Front, FrontForce);
-            rb.AddForce(-force * Time.deltaTime, 0, 0);
+            rb.AddForce(force * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKey("s"))
         {
-            rb.AddForce(force * Time.deltaTime, 0, 0);
+            rb.AddForce(-force * Time.deltaTime, 0, 0);
             //rb.AddForceAtPosition(Back, BackForce);
         }
 
         if (Input.GetKey("a"))
         {
-            rb.AddForce(0, 0, -force * Time.deltaTime);
+            rb.AddForce(0, 0, force * Time.deltaTime);
             //rb.AddForceAtPosition(Left, LeftForce);
         }
 
