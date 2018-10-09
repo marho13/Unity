@@ -43,23 +43,26 @@ public class DroneMovement : MonoBehaviour {
 
         if (Input.GetKey("w"))
         {
-            rb.AddForceAtPosition(Front, FrontForce);
-            //rb.AddForce(-force * Time.deltaTime, 0, 0);
+            //rb.AddForceAtPosition(Front, FrontForce);
+            rb.AddForce(-force * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKey("s"))
         {
-            rb.AddForceAtPosition(Back, BackForce);
+            rb.AddForce(force * Time.deltaTime, 0, 0);
+            //rb.AddForceAtPosition(Back, BackForce);
         }
 
         if (Input.GetKey("a"))
         {
-            rb.AddForceAtPosition(Left, LeftForce);
+            rb.AddForce(0, 0, -force * Time.deltaTime);
+            //rb.AddForceAtPosition(Left, LeftForce);
         }
 
         if (Input.GetKey("d"))
         {
-            rb.AddForceAtPosition(Right, RightForce);
+            rb.AddForce(0, 0, -force * Time.deltaTime);
+            //rb.AddForceAtPosition(Right, RightForce);
         }
 
     }
