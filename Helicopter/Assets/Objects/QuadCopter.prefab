@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4927316895104924}
   - component: {fileID: 54520486258295694}
+  - component: {fileID: 114077861489343106}
   m_Layer: 0
   m_Name: QuadCopter
   m_TagString: Untagged
@@ -275,7 +276,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4235111649857054}
-  - component: {fileID: 114564640951415698}
   m_Layer: 0
   m_Name: Wings
   m_TagString: Untagged
@@ -864,7 +864,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310815681350356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 133.9, y: 17.89, z: 127.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4721157654182260}
@@ -1921,25 +1921,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114564640951415698
+--- !u!114 &114077861489343106
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1454439820875688}
+  m_GameObject: {fileID: 1310815681350356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4807fb78fbc4f2b41ae05795fe37d1bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 05c7dc6df6004d849abd11aedc875964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FLeftSpeed: 0
-  FRightSpeed: 0
-  BLeftSpeed: 0
-  BRightSpeed: 0
-  FRRot: {fileID: 4766810399306730}
-  FLRot: {fileID: 4223169713453134}
-  BRRot: {fileID: 4490479563716806}
-  BLRot: {fileID: 4986577473020624}
+  rb: {fileID: 54520486258295694}
+  Front: {x: 0, y: 0, z: 0}
+  Back: {x: 0, y: 0, z: 0}
+  Left: {x: 0, y: 0, z: 0}
+  Right: {x: 0, y: 0, z: 0}
+  FrontForce: {x: 0, y: 0, z: 0}
+  BackForce: {x: 0, y: 0, z: 0}
+  LeftForce: {x: 0, y: 0, z: 0}
+  RightForce: {x: 0, y: 0, z: 0}
+  upForce: 700
+  force: 100
+  distance: 5
 --- !u!135 &135038914500481790
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -274,34 +274,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1310815681350356, guid: 2d6e35ca5348e114db3dab8961c3de62,
     type: 2}
   m_PrefabInternal: {fileID: 617778735}
---- !u!54 &564423491 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 54520486258295694, guid: 2d6e35ca5348e114db3dab8961c3de62,
-    type: 2}
-  m_PrefabInternal: {fileID: 617778735}
---- !u!114 &564423493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 564423490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c7dc6df6004d849abd11aedc875964, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 564423491}
-  Front: {x: 0, y: 0, z: 0}
-  Back: {x: 0, y: 0, z: 0}
-  Left: {x: 0, y: 0, z: 0}
-  Right: {x: 0, y: 0, z: 0}
-  FrontForce: {x: 0, y: 0, z: 0}
-  BackForce: {x: 0, y: 0, z: 0}
-  LeftForce: {x: 0, y: 0, z: 0}
-  RightForce: {x: 0, y: 0, z: 0}
-  upForce: 700
-  force: 100
-  distance: 5
 --- !u!1001 &582648907
 Prefab:
   m_ObjectHideFlags: 0
@@ -383,20 +355,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4927316895104924, guid: 2d6e35ca5348e114db3dab8961c3de62, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927316895104924, guid: 2d6e35ca5348e114db3dab8961c3de62, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927316895104924, guid: 2d6e35ca5348e114db3dab8961c3de62, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114564640951415698, guid: 2d6e35ca5348e114db3dab8961c3de62, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d6e35ca5348e114db3dab8961c3de62, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1105145262
@@ -438,32 +397,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114817095596734550, guid: 15753249f2e0d6c4db1d4c718a7615f7,
-        type: 2}
-      propertyPath: depth
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114817095596734550, guid: 15753249f2e0d6c4db1d4c718a7615f7,
-        type: 2}
-      propertyPath: scale
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114817095596734550, guid: 15753249f2e0d6c4db1d4c718a7615f7,
-        type: 2}
-      propertyPath: offsetY
-      value: 73.64133
-      objectReference: {fileID: 0}
-    - target: {fileID: 218056991145945040, guid: 15753249f2e0d6c4db1d4c718a7615f7,
-        type: 2}
-      propertyPath: m_TreeDistance
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 154135068229581900, guid: 15753249f2e0d6c4db1d4c718a7615f7,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 87e5fd1f763b50542a9c05d9e04e7bcd,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15753249f2e0d6c4db1d4c718a7615f7, type: 2}
   m_IsPrefabAsset: 0

@@ -56,16 +56,16 @@ MonoBehaviour:
   depth: 20
   width: 256
   bredth: 256
-  scale: 20
+  scale: 4
   offsetX: 100
-  offsetY: 100
+  offsetY: 73.64133
 --- !u!154 &154135068229581900
 TerrainCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1139777071024626}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 87e5fd1f763b50542a9c05d9e04e7bcd, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 112b0ddc9f0c7ed4ab05736b16f82264, type: 2}
   m_EnableTreeColliders: 1
@@ -78,7 +78,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 112b0ddc9f0c7ed4ab05736b16f82264, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 2000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
