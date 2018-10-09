@@ -5,34 +5,34 @@ using UnityEngine;
 public class DroneMovement : MonoBehaviour {
 
     public Rigidbody rb;
-    public Rigidbody flBlade; //fl means front left
-    public Rigidbody frBlade; //fr means front right
-    public Rigidbody blBlade; //bl means back left
-    public Rigidbody brBlade; //br means back right
+
+    public Vector3 Front;
+    public Vector3 Back;
+    public Vector3 Left;
+    public Vector3 Right;
+
+    public int force = 1000;
+
+    void Start()
+    {
+        Debug.Log("I fucked jakobs mom ('''\\_(o.O)_/''')"); //forceFr = force * Time.deltaTime, 0, 0;
+    }
 
 
-    public int force = 100;
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    void FixedUpdate () {
         if (Input.GetKey("space"))
         {
-            flBlade.AddForce(0, force * Time.deltaTime, 0);
-            frBlade.AddForce(0, force * Time.deltaTime, 0);
-            blBlade.AddForce(0, force * Time.deltaTime, 0);
-            brBlade.AddForce(0, force * Time.deltaTime, 0);
+            rb.AddForce(0, force * Time.deltaTime, 0);
         }
 
         if (Input.GetKey("w"))
         {
-            flBlade.AddForce(force * Time.deltaTime, 0, 0);
-            frBlade.AddForce(force * Time.deltaTime, 0, 0);
+            rb.AddForce(-force * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKey("s"))
         {
-            flBlade.AddForce(-force * Time.deltaTime, 0, 0);
-            frBlade.AddForce(-force * Time.deltaTime, 0, 0);
+            rb.AddForce(force * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKey("a"))
