@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class droneMove : MonoBehaviour {
+public class droneMove : MonoBehaviour
+{
 
     public Rigidbody rb;
 
@@ -20,6 +21,7 @@ public class droneMove : MonoBehaviour {
 
     void FixedUpdate()
     {
+        rotationCheck();
         rb.AddForce(0, constantF * Time.deltaTime, 0);
         if (Input.GetKey("space"))
         {
@@ -29,7 +31,7 @@ public class droneMove : MonoBehaviour {
         if (Input.GetKey("w"))
         {
             moveForward();
-            
+
         }
 
         if (Input.GetKey("s"))
@@ -53,7 +55,8 @@ public class droneMove : MonoBehaviour {
     //called each update, to rotate properly when letting go of controls
     public void rotationCheck()
     {
-        if (rotationX > 90){
+        if (rotationX > 90)
+        {
             //rotate towards 180
         }
         else
