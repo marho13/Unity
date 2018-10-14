@@ -6,127 +6,79 @@ public class droneMove : MonoBehaviour
 {
 
     public Rigidbody rb;
+    public GameObject fR;
+    public GameObject fL;
+    public GameObject bR;
+    public GameObject bL;
 
     public Vector3 rotationChange;
+    public Vector3 force;
+    public Vector3 dirForce;
 
-    public int directionalforce = 5;
+    public int directionalforce = 50;
     public int upForce = 350;
     public int constantF = 350;
-    public int rotInt = 180;
+    public int rotInt = 10;
 
     public float rotationX;
     public float rotationY;
     public float rotationZ;
+    public float maxSpeed;
+    public float wantedX;
+    public float currentX;
 
+    private void Start()
+    {
+        force.Set(0, constantF * Time.deltaTime, 0);
+        dirForce.Set(0, directionalforce * Time.deltaTime, 0);
+    }
 
     void FixedUpdate()
     {
-        rotationCheck();
+        Debug.Log(rb.transform.rotation);
         rb.AddForce(0, constantF * Time.deltaTime, 0);
         if (Input.GetKey("space"))
         {
-            rb.AddForce(0, upForce * Time.deltaTime, 0);
+            rb.AddForceAtPosition(force, fR.transform.position); //this force should be based on the angle, meaning 45* = 0.7 in that direction
+            rb.AddForceAtPosition(force, fL.transform.position);
+            rb.AddForceAtPosition(force, bR.transform.position);
+            rb.AddForceAtPosition(force, bL.transform.position);
         }
 
         if (Input.GetKey("w"))
         {
-            moveForward();
-
+            rb.AddForce(-upForce * Time.deltaTime, 0, 0);
+            rb.AddForceAtPosition(dirForce, bR.transform.position);
+            rb.AddForceAtPosition(dirForce, bL.transform.position);
         }
 
         if (Input.GetKey("s"))
         {
-            moveBackward();
+            rb.AddForce(upForce * Time.deltaTime, 0, 0);
+            rb.AddForceAtPosition(dirForce, fR.transform.position);
+            rb.AddForceAtPosition(dirForce, fL.transform.position);
         }
 
         if (Input.GetKey("a"))
         {
-            moveLeft();
+            rb.AddForce(0, 0, -upForce * Time.deltaTime);
+            rb.AddForceAtPosition(dirForce, fR.transform.position);
+            rb.AddForceAtPosition(dirForce, bR.transform.position);
         }
 
         if (Input.GetKey("d"))
         {
-            moveRight();
+            rb.AddForce(0, 0, upForce * Time.deltaTime);
+            rb.AddForceAtPosition(dirForce, fL.transform.position);
+            rb.AddForceAtPosition(dirForce, bL.transform.position);
         }
 
     }
 
-
-    //called each update, to rotate properly when letting go of controls
-    public void rotationCheck()
+    public void sinCalc()
     {
-        if (rotationX > 90)
-        {
-            //rotate towards 180
-        }
-        else
-        {
-            //rotate towards 0
-        }
-
-        //check y
-        if (rotationY > 90)
-        {
-
-        }
-        else
-        {
-
-        }
-
-        //check z
-        if (rotationZ > 90)
-        {
-
-        }
-        else
-        {
-
-        }
+        //float X = Mathf.Sin(rb.transform.rotation.z)//rotation is probably in angles not radians while mathf needs radians
+        //this should use the angle to find how much it should go in X, Y and Z directions
     }
 
-    public void moveForward()
-    {
-        rb.AddRelativeForce(Vector3.left * directionalforce);
-        rotationX = 0;
-        rotationY = 0;
-        rotationZ = rotInt;
-        rotationChange.Set(rb.transform.rotation.x, rb.transform.rotation.y, rotationZ);
-        Quaternion rot = Quaternion.Euler(rotationChange * Time.deltaTime);
-        rb.MoveRotation(rot);
-    }
-
-    public void moveBackward()
-    {
-        rb.AddRelativeForce(Vector3.right * directionalforce);
-        rotationX = 0;
-        rotationY = 0;
-        rotationZ = rotInt;
-        rotationChange.Set(rb.transform.rotation.x, rb.transform.rotation.y, rotationZ);
-        Quaternion rot = Quaternion.Euler(rotationChange * Time.deltaTime);
-        rb.MoveRotation(rot);
-    }
-
-    public void moveLeft()
-    {
-        rb.AddRelativeForce(Vector3.back * directionalforce);
-        rotationX = -rotInt;
-        rotationY = 0;
-        rotationZ = 0;
-        rotationChange.Set(rotationX, rb.transform.rotation.y, rb.transform.rotation.z);
-        Quaternion rot = Quaternion.Euler(rotationChange * Time.deltaTime);
-        rb.MoveRotation(rot);
-    }
-
-    public void moveRight()
-    {
-        rb.AddRelativeForce(Vector3.forward * directionalforce);
-        rotationX = rotInt;
-        rotationY = 0;
-        rotationZ = 0;
-        rotationChange.Set(rotationX, rb.transform.rotation.y, rb.transform.rotation.z);
-        Quaternion rot = Quaternion.Euler(rotationChange * Time.deltaTime);
-        rb.MoveRotation(rot);
-
-    }
 }
